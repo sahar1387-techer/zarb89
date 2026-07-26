@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazir', 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.game-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.game-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    color: #4a3f5c;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #e0d6f0;
+    padding-bottom: 15px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    background: #f0ebf8;
+    padding: 12px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a3f5c;
+}
+
+.score-board span {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.question {
+    font-size: 42px;
+    font-weight: 900;
+    color: #4a3f5c;
+    background: #f8f5ff;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 3px solid #e0d6f0;
+    letter-spacing: 5px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 22px;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    text-align: center;
+}
+
+.input-area input:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.15);
+}
+
+.input-area button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.input-area button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.4);
+}
+
+.input-area button:active {
+    transform: scale(0.95);
+}
+
+.result {
+    font-size: 22px;
+    font-weight: bold;
+    min-height: 50px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.result.correct {
+    color: #27ae60;
+    animation: pop 0.5s ease;
+}
+
+.result.wrong {
+    color: #e74c3c;
+    animation: shake 0.5s ease;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.buttons button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f0ebf8;
+    color: #4a3f5c;
+}
+
+.buttons button:hover {
+    background: #e0d6f0;
+    transform: scale(1.02);
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-15px); }
+    75% { transform: translateX(15px); }
+}
+
+@media (max-width: 500px) {
+    .game-box {
+        padding: 25px 20px;
+    }
+    
+    .question {
+        font-size: 32px;
+        padding: 18px;
+        min-height: 80px;
+    }
+    
+    .input-area {
+        flex-direction: column;
+    }
+    
+    .input-area input {
+        font-size: 20px;
+        padding: 12px;
+    }
+    
+    .input-area button {
+        padding: 14px;
+        font-size: 16px;
+    }
+    
+    .score-board {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+}
